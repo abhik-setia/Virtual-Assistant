@@ -1,11 +1,15 @@
+
 <?php  
-	include 'CDN.php';
-	include 'navbar.php';
+
+	include 'includes/CDN.php';
+	include 'includes/navbar.php';
+	session_start();
 ?>
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 	<title>Meet Emma</title>
+
 	<style type="text/css">
 		body,html{
   			width: 100%;
@@ -17,7 +21,7 @@
 			border:2px solid black; 
 			height: 100%;
 		}
-	</style>
+	</style> 
 </head>
 <body>
 
@@ -26,11 +30,39 @@
 		<div class="col-sm-2 section_border" >
 			<h2> Col-1</h2>
 		</div>
-		<div class="col-sm-8 section_border">
+		<div class="col-sm-7 section_border">
 			<h2> Col-1</h2>
 		</div>
-		<div class="col-sm-2 section_border">
-			<h2> Col-1</h2>
+		<div class="col-sm-3 section_border">
+			<h2> Col-3</h2>
+  <?php if ($_SESSION['FBID']): ?>      <!--  After user login  -->
+  	<div class="container">
+  	<div class="hero-unit">
+  	  <h3>Hello <?php echo $_SESSION['FULLNAME']; ?></h3>
+  	  </div>
+  	<div class="span4">
+  	 <ul class="nav nav-list">
+  	<li class="nav-header">Image</li>
+  		<li><img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
+  	<li class="nav-header">Facebook ID</li>
+  	<li><?php echo  $_SESSION['FBID']; ?></li>
+  	<li class="nav-header">Facebook fullname</li>
+  	<li><?php echo $_SESSION['FULLNAME']; ?></li>
+  	<li class="nav-header">Facebook Email</li>
+  	<li><?php echo $_SESSION['EMAIL']; ?></li>
+  	</ul></div></div>
+<?php else: ?>     <!-- Before login --> 
+<!-- <div class="container">
+<h1>Login with Facebook</h1>
+           Not Connected
+<div>
+      <a href="fbconfig.php">Login with Facebook</a></div>
+	 <div> <a href="http://www.krizna.com/general/login-with-facebook-using-php/"  title="Login with facebook">View Post</a>
+	  </div>
+      </div>
+ -->    
+<?php header("Location:login_register.php"); ?>
+<?php endif ?>
 		</div>
 	</div>
 	<div class="row col-lg-12" style="height: 14%;background-color: #222;width:102%" > 
@@ -45,6 +77,5 @@
 		</div>
 	</div>
 </div>
-
 </body>
 </html>
