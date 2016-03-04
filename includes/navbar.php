@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static" style="margin-bottom: 0px">
+<nav class="navbar navbar-inverse navbar-static" style="margin-bottom: 0px;font-family: 'Raleway', sans-serif;">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

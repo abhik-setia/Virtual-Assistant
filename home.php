@@ -18,7 +18,7 @@
   			margin: 0px;
 		}
 		.section_border{
-			border:2px solid black; 
+			//border:2px solid black; 
 			height: 100%;
 		}
 
@@ -29,7 +29,7 @@
 <div class="container-fluid" style="margin-top:0px; font-family: 'Raleway', sans-serif;">
 	<div class="row" style="height: 80%">
 		<div class="col-sm-2 section_border" >
-			<h2> Col-1</h2>
+			<?php include'includes/sidebar.php'; ?>
 		</div>
 		<div class="col-sm-7 section_border">
 			<h2> Col-1</h2>
