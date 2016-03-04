@@ -4,8 +4,7 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
       
       <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-      
-
+      <link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
       <!--APIS USED-->
       <!--google plus api-->
        <script src="https://apis.google.com/js/platform.js" async defer></script>

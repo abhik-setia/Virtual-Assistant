@@ -21,11 +21,12 @@
 			border:2px solid black; 
 			height: 100%;
 		}
+
 	</style> 
 </head>
 <body>
 
-<div class="container-fluid" style="margin-top:0px ">
+<div class="container-fluid" style="margin-top:0px; font-family: 'Raleway', sans-serif;">
 	<div class="row" style="height: 80%">
 		<div class="col-sm-2 section_border" >
 			<h2> Col-1</h2>
@@ -33,34 +34,24 @@
 		<div class="col-sm-7 section_border">
 			<h2> Col-1</h2>
 		</div>
-		<div class="col-sm-3 section_border">
-			<h2> Col-3</h2>
+		<div class="col-sm-3 section_border"
+		 style="background-image:url('http://cache4.asset-cache.net/xd/505229569.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE48053E4E3C9F9FFA16F86871D979DBBA836C62C6C731A6616AADB1EAF54E7E3BE9A'); background-size:cover; color:#fff;">
   <?php if ($_SESSION['FBID']): ?>      <!--  After user login  -->
-  	<div class="container">
-  	<div class="hero-unit">
-  	  <h3>Hello <?php echo $_SESSION['FULLNAME']; ?></h3>
+  	<div class="card" >
+  	  <!--<img class="card-img-top" data-src="..." alt="Card image cap">-->
+  	  <img  class=" card-image img-circle" style="margin:auto 20%;" src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture?type=large">
+  	  <div class="card-block">
+  	    <h4 class="card-title">Hello <?php echo $_SESSION['FULLNAME']; ?></h4>
+  	    <p class="card-text">Your virtual assistant is up and running now.</p>
   	  </div>
-  	<div class="span4">
-  	 <ul class="nav nav-list">
-  	<li class="nav-header">Image</li>
-  		<li><img src="https://graph.facebook.com/<?php echo $_SESSION['FBID']; ?>/picture"></li>
-  	<li class="nav-header">Facebook ID</li>
-  	<li><?php echo  $_SESSION['FBID']; ?></li>
-  	<li class="nav-header">Facebook fullname</li>
-  	<li><?php echo $_SESSION['FULLNAME']; ?></li>
-  	<li class="nav-header">Facebook Email</li>
-  	<li><?php echo $_SESSION['EMAIL']; ?></li>
-  	</ul></div></div>
-<?php else: ?>     <!-- Before login --> 
-<!-- <div class="container">
-<h1>Login with Facebook</h1>
-           Not Connected
-<div>
-      <a href="fbconfig.php">Login with Facebook</a></div>
-	 <div> <a href="http://www.krizna.com/general/login-with-facebook-using-php/"  title="Login with facebook">View Post</a>
-	  </div>
-      </div>
- -->    
+  	  <ul class="list-group list-group-flush" style="color: #222">
+  	    <li class="list-group-item"><?php echo $_SESSION['EMAIL']; ?></li>
+  	    <li class="list-group-item">"LIVE,LAUGH,LOVE AND CODE" </li>
+  	    <li class="list-group-item">&copy by Decode Black 96</li>
+  	  </ul>
+  	</div>
+
+<?php else: ?>    
 <?php header("Location:login_register.php"); ?>
 <?php endif ?>
 		</div>
