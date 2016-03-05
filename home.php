@@ -11,6 +11,7 @@
 	<title>Meet Emma</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   	<script type="text/javascript">
+
     var accessToken = "c77d14f6105b4faabe0f5a9f251b9c7c",
       subscriptionKey = "1c55f87c-ecb9-42d0-a789-b846a09cb842",
       baseUrl = "https://api.api.ai/v1/",
@@ -132,14 +133,31 @@
 
         if (val !== messageRecording) {
           var msg = new SpeechSynthesisUtterance();
+          var voices=window.speechSynthesis.getVoices();
           msg.voiceURI = "native";
           msg.text = val;
           msg.lang = "en-US";
+          var voices = window.speechSynthesis.getVoices();
+
+          // msg.voice = voices.filter(function(voice) { return voice.name == 'Alex'; })[2];
+          msg.voice=voices[2];
+          msg.rate=0.9;
+          msg.pitch=1;
           window.speechSynthesis.speak(msg);
         }
 
         $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
       }
+      function getVoices(){
+      var timer = setTimeout(function() {
+          var voices = speechSynthesis.getVoices();
+          console.log(voices);
+          var msg=new SpeechSynthesisUtterance();
+           msg.voice = voices[2];
+            clearInterval(timer);
+         	 
+      			}, 200);
+ 		 }
       </script>
 	<style type="text/css">
 		body,html{
@@ -219,7 +237,7 @@
 		}
 	</style> 
 </head>
-<body>
+<body onload="getVoices()">
 
 <div class="container-fluid" style="margin-top:0px; font-family: 'Raleway', sans-serif;">
 	<div class="row" style="height: 80%">
