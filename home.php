@@ -251,7 +251,7 @@
       color:#222;
       //border:2px solid black;
     }
-    
+    .container_2::-webkit-scrollbar { width: 0 }
 	</style> 
 </head>
 <body onload="getVoices()">
@@ -261,7 +261,7 @@
 		<div class="col-sm-2 section_border" >
 			<?php include'includes/sidebar.php'; ?>
 		</div>
-		<div class="col-sm-7 section_border" >
+		<div class="col-sm-7 section_border" style="overflow: hidden">
 <!-- 			<iframe src="material_search.html" style="width: 100%;height: 100%"></iframe>
  --><!-- 		<input id="speech" type="text">	
  			<button id="rec" class="btn">Speak</button>
