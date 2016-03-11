@@ -12,7 +12,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   	<script type="text/javascript">
 
-    var accessToken = "c77d14f6105b4faabe0f5a9f251b9c7c",
+    var accessToken = "a58f6164a7d9444facea1355a8254531",
       subscriptionKey = "1c55f87c-ecb9-42d0-a789-b846a09cb842",
       baseUrl = "https://api.api.ai/v1/",
       $speechInput,
@@ -35,6 +35,8 @@
         });
           $recBtn.on("click", function(event) {
             switchRecognition();
+            msg.cancelUpdate();
+            //window.speechSynthesis.cancel();
           });
           $(".debug__btn").on("click", function() {
             $(this).next().toggleClass("is-active");
@@ -80,6 +82,9 @@
           stopRecognition();
         } else {
           startRecognition();
+      var msg = new SpeechSynthesisUtterance();
+      //window.speechSynthesis.cancel();
+      window.speechSynthesis.cancel();
         }
       }
 
