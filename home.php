@@ -152,8 +152,9 @@
           msg.rate=0.9;
           msg.pitch=1;
           window.speechSynthesis.speak(msg);
-        }
-
+        
+      }
+      $(".container_2").prepend("<div class='dynamic_response'><div class='panel panel-default'><div class='panel-heading'><h4>"+$speechInput.val()+"</h4></div><div class='panel-body'><p>"+msg.text+"</p></div></div></div>");
         $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
       }
       function getVoices(){
@@ -173,6 +174,7 @@
   			height: 100%;
   			padding: 0px;
   			margin: 0px;
+        overflow:hidden;
   			background-color: #192837;
       		color:#fff;
 		}
@@ -243,6 +245,13 @@
 		  text-transform: uppercase;
 		  -webkit-transition: all 0.35s ease-in;
 		}
+    .dynamic_response{
+      width:100%;
+      margin:auto auto; 
+      color:#222;
+      //border:2px solid black;
+    }
+    
 	</style> 
 </head>
 <body onload="getVoices()">
@@ -252,7 +261,7 @@
 		<div class="col-sm-2 section_border" >
 			<?php include'includes/sidebar.php'; ?>
 		</div>
-		<div class="col-sm-7 section_border" style="font-family: "Titillium Web", Arial, sans-serif;">
+		<div class="col-sm-7 section_border" >
 <!-- 			<iframe src="material_search.html" style="width: 100%;height: 100%"></iframe>
  --><!-- 		<input id="speech" type="text">	
  			<button id="rec" class="btn">Speak</button>
@@ -262,16 +271,19 @@
  			</div>
  		</div>
 
- 		<div class="debug">
+ 		<!-- <div class="debug">
  			<div class="debug__btn btn">
  				DEBUG JSON RESULTS
  			</div>
  		</div>
  		<div class="debug__content">
  			<textarea id="response" cols="40" rows="20">
- 				
+ 				   
  			</textarea>
- 		</div>
+ 		 </div>-->
+     <div  class="col-sm-12 container_2" style="height:90%;overflow:auto">
+       
+     </div>
  		</div>
 		<div class="col-sm-3 section_border"
 		 style="background-image:url('http://cache4.asset-cache.net/xd/505229569.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE48053E4E3C9F9FFA16F86871D979DBBA836C62C6C731A6616AADB1EAF54E7E3BE9A'); background-size:cover; color:#fff;">
