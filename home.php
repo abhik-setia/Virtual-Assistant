@@ -94,7 +94,10 @@
       }
 
       function updateRec() {
-        $recBtn.text(recognition ? "Stop" : "Speak");
+        //$recBtn.text(recognition ? "Stop" : "Speak");
+        //$recBtn.css('background-color',recognition ? "#66ff66":"white");
+         $recBtn.css('border',recognition ? "6px solid red":"none");
+      
       }
 
       function send() {
@@ -177,7 +180,7 @@
 			//border:2px solid black; 
 			height: 100%;
 		}
-		input {
+		/*input {
 		  background-color: #126077;
 		  border: 1px solid #3F7F93;
 		  color: #A6CAE6;
@@ -187,7 +190,7 @@
 		  padding: 0 0.75em;
 		  width: 400px;
 		  -webkit-transition: all 0.35s ease-in;
-		}
+		}*/
 		textarea {
 		  background-color: #070F24;
 		  border: 1px solid #122435;
@@ -196,9 +199,9 @@
 		  width: 100%;
 		  -webkit-transition: all 0.35s ease-in;
 		}
-		input:active, input:focus, textarea:active, textarea:focus {
+		/*input:active, input:focus, textarea:active, textarea:focus {
 		  outline: 1px solid #48788B;
-		}
+		}*/
 		.debug__content {
 		  font-size: 14px;
 		  max-height: 0;
@@ -251,9 +254,9 @@
 		</div>
 		<div class="col-sm-7 section_border" style="font-family: "Titillium Web", Arial, sans-serif;">
 <!-- 			<iframe src="material_search.html" style="width: 100%;height: 100%"></iframe>
- -->		<input id="speech" type="text">	
+ --><!-- 		<input id="speech" type="text">	
  			<button id="rec" class="btn">Speak</button>
- 		<div class="spoken-response" id="spokenResponse">
+ 		 --><div class="spoken-response" id="spokenResponse">
  			<div class="spoken-response__text">
  				
  			</div>
@@ -295,10 +298,10 @@
 	<div class="row col-lg-12" style="height: 14%;background-color: #222;width:102%" > 
 		<div class="col-lg-8 col-lg-offset-2" style="margin-top: 2%">
 			<div class="col-sm-10">
-				<input type="text" class="col-sm-8 form-control" placeholder="Say Something">
+				<input type="text" id="speech" class="col-sm-8 form-control" placeholder="Say Something">
 			</div>
 			<div>
-				<span class="pull-right col-sm-2"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR42u2Xz2sTQRSAX8VSb1K8iNqKooJH2Ux6Ksn+iPQqxZMIehJB0do/IMhmQWsvHr2KSEGk0tSLIoWIYNUKij20F2/N7iaUZnYT0kYzzhMKs0HDJiTdLcwHDwKZSd63781LBiQSSW9JZdkhzfKm1Rz9mjZp/W9YdEU3vXv4HsQZ40FtNG36q5rls//Ej4tmbSS2T15Mvp3ExOPmEMQNbBtMMEyoljcFcQN7PqyAlqNfIG7gYQ0tYNIaxA1MrJPY3wImbUqBKAXSFv0tBSIVMOkvKRDtGKWN/T6FdqRAxFNoWwpEPIXqUqBT6ALU/UVgu8GW4GD3f6f9TRDYNJTDrk7YbtiqUumHwIYoUJuHERDAS0r4CvgFECgbY+cFAR7KT+g1POmCKFDNw6WggHc3fBtVb4CAoyauBgXIG+g1Xh5mRAGah6cggBd11fK/h7lOprIs0H6uRl6KAo5O7kOv4QmPiwJ4Jqqv4FiwCtXjvD2+tRmfK6kZ/ygI2HritK0rDVGgrClJ6DWMwYC/AGuCBMYcIC2V0CzvjmbRz3j3xUjn6CfeYreUJ2wQkGD75INPX1mFfsEFrrcIYCvdhC4paWQakxajpJMr0C9YFg54i7AsClRmh9/xnr0NHcInzZStk2aLwAcGMAD9pPIazvFKVDD5rdnhJeHLX5RTyRPQHpz5o66emMc9wdlPtvA8wF7Aq2BUHh1525qEo5JtR1WeOXpickO9cJIpyuD6xJmhYiZ5ytWSl3mlnuOaf+2zDaLDXmJrSgZ/MYVEugo+gSh+FkSBa4yd5Ul87DZ5XpFl/AyIEjzYjkau8WqshU2cr13HPbgX4gJOD97n465GZlyVvC9mSKloKI2iTnbwNT+gBX54H+IaXAtxJzE3ycSAFqSAFJACUkAikXD+AHj5/wx2o5osAAAAAElFTkSuQmCC" alt="microphone_img">
+				<span class="pull-right col-sm-2"><button id="rec"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR42u2Xz2sTQRSAX8VSb1K8iNqKooJH2Ux6Ksn+iPQqxZMIehJB0do/IMhmQWsvHr2KSEGk0tSLIoWIYNUKij20F2/N7iaUZnYT0kYzzhMKs0HDJiTdLcwHDwKZSd63781LBiQSSW9JZdkhzfKm1Rz9mjZp/W9YdEU3vXv4HsQZ40FtNG36q5rls//Ej4tmbSS2T15Mvp3ExOPmEMQNbBtMMEyoljcFcQN7PqyAlqNfIG7gYQ0tYNIaxA1MrJPY3wImbUqBKAXSFv0tBSIVMOkvKRDtGKWN/T6FdqRAxFNoWwpEPIXqUqBT6ALU/UVgu8GW4GD3f6f9TRDYNJTDrk7YbtiqUumHwIYoUJuHERDAS0r4CvgFECgbY+cFAR7KT+g1POmCKFDNw6WggHc3fBtVb4CAoyauBgXIG+g1Xh5mRAGah6cggBd11fK/h7lOprIs0H6uRl6KAo5O7kOv4QmPiwJ4Jqqv4FiwCtXjvD2+tRmfK6kZ/ygI2HritK0rDVGgrClJ6DWMwYC/AGuCBMYcIC2V0CzvjmbRz3j3xUjn6CfeYreUJ2wQkGD75INPX1mFfsEFrrcIYCvdhC4paWQakxajpJMr0C9YFg54i7AsClRmh9/xnr0NHcInzZStk2aLwAcGMAD9pPIazvFKVDD5rdnhJeHLX5RTyRPQHpz5o66emMc9wdlPtvA8wF7Aq2BUHh1525qEo5JtR1WeOXpickO9cJIpyuD6xJmhYiZ5ytWSl3mlnuOaf+2zDaLDXmJrSgZ/MYVEugo+gSh+FkSBa4yd5Ul87DZ5XpFl/AyIEjzYjkau8WqshU2cr13HPbgX4gJOD97n465GZlyVvC9mSKloKI2iTnbwNT+gBX54H+IaXAtxJzE3ycSAFqSAFJACUkAikXD+AHj5/wx2o5osAAAAAElFTkSuQmCC" alt="microphone_img"></button>
 				</span>
 			</div>
 		</div>

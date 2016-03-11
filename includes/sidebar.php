@@ -1,5 +1,5 @@
 <link href="css/simple-sidebar.css" rel="stylesheet">
-<div id="sidebar-wrapper" class="col-sm-3">
+<div id="sidebar-wrapper" class="col-sm-3" >
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
